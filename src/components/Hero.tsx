@@ -21,16 +21,14 @@ const Hero = () => {
       {/* Background pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMjkyRjEiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdi02aC02djZoNnptNiAwaDZ2LTZoLTZ2NnptLTEyIDBoLTZ2LTZoLTZ2LTZoNnYtNmgtNnY2aC02djZoNnY2aC02djZoNnY2aDZ2LTZoNnYtNnptMTIgMGg2djZoLTZ2LTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50 -z-10"></div>
       
-      <div className="section-container grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+      <div className="section-container grid md:grid-cols-2 gap-8 md:gap-28 items-center">
         <div 
           className={`space-y-6 transition-all duration-1000 delay-300 ${
             isLoaded ? "opacity-100" : "opacity-0 translate-y-8"
           }`}
         >
           <div>
-            <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-4">
-              Premium Building Solutions
-            </span>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight">
               Building a <span className="text-primary">Sustainable</span> Future with AAC Technology
             </h1>
