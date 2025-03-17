@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -25,7 +26,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     {
       name: "Products",
       href: "#products",
@@ -37,7 +38,7 @@ const Navbar = () => {
     },
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
-    { name: "Projects", href: "#projects" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -53,13 +54,13 @@ const Navbar = () => {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <a href="#home" className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <span className="sr-only">BlockCrete</span>
               <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
                 <span className="text-white font-bold text-lg">BC</span>
               </div>
               <span className="font-display font-bold text-xl tracking-tight">BlockCrete</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -75,9 +76,15 @@ const Navbar = () => {
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </button>
                 ) : (
-                  <a href={link.href} className="nav-link font-medium">
-                    {link.name}
-                  </a>
+                  link.href.startsWith('/') ? (
+                    <Link to={link.href} className="nav-link font-medium">
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a href={link.href} className="nav-link font-medium">
+                      {link.name}
+                    </a>
+                  )
                 )}
 
                 {link.dropdown && (
@@ -102,8 +109,10 @@ const Navbar = () => {
                 )}
               </div>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-md">
-              Get a Quote
+            <Button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-md" asChild>
+              <Link to="/request-quote">
+                Get a Quote
+              </Link>
             </Button>
           </div>
 
@@ -163,19 +172,31 @@ const Navbar = () => {
                   )}
                 </div>
               ) : (
-                <a
-                  href={link.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary"
-                  onClick={toggleMenu}
-                >
-                  {link.name}
-                </a>
+                link.href.startsWith('/') ? (
+                  <Link
+                    to={link.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary"
+                    onClick={toggleMenu}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary"
+                    onClick={toggleMenu}
+                  >
+                    {link.name}
+                  </a>
+                )
               )}
             </div>
           ))}
           <div className="pt-4 pb-2">
-            <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-md">
-              Get a Quote
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-md" asChild>
+              <Link to="/request-quote" onClick={toggleMenu}>
+                Get a Quote
+              </Link>
             </Button>
           </div>
         </div>
