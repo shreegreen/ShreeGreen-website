@@ -47,7 +47,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-12 bg-white overflow-hidden">
+    <section id="about" ref={sectionRef} className="py-8 bg-white overflow-hidden">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
           <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-4">

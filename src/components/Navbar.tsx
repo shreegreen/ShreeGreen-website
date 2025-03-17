@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +24,24 @@ const Navbar = () => {
   
   const handleDropdownToggle = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
+  const isHomePage = location.pathname === "/";
+
+  const scrollToSection = (sectionId: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    if (!isHomePage) {
+      // If not on homepage, navigate to home then scroll
+      window.location.href = `/${sectionId}`;
+      return;
+    }
+    
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsMenuOpen(false);
+    }
   };
 
   const navLinks = [
@@ -81,7 +100,11 @@ const Navbar = () => {
                       {link.name}
                     </Link>
                   ) : (
-                    <a href={link.href} className="nav-link font-medium">
+                    <a 
+                      href={link.href} 
+                      className="nav-link font-medium"
+                      onClick={(e) => link.href.startsWith('#') ? scrollToSection(link.href.substring(1), e) : undefined}
+                    >
                       {link.name}
                     </a>
                   )
@@ -100,6 +123,7 @@ const Navbar = () => {
                           key={item.name}
                           href={item.href}
                           className="block px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary transition-colors"
+                          onClick={(e) => item.href.startsWith('#') ? scrollToSection(item.href.substring(1), e) : undefined}
                         >
                           {item.name}
                         </a>
@@ -163,7 +187,12 @@ const Navbar = () => {
                           key={item.name}
                           href={item.href}
                           className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary"
-                          onClick={toggleMenu}
+                          onClick={(e) => {
+                            if (item.href.startsWith('#')) {
+                              scrollToSection(item.href.substring(1), e);
+                            }
+                            toggleMenu();
+                          }}
                         >
                           {item.name}
                         </a>
@@ -184,7 +213,12 @@ const Navbar = () => {
                   <a
                     href={link.href}
                     className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary"
-                    onClick={toggleMenu}
+                    onClick={(e) => {
+                      if (link.href.startsWith('#')) {
+                        scrollToSection(link.href.substring(1), e);
+                      }
+                      toggleMenu();
+                    }}
                   >
                     {link.name}
                   </a>
