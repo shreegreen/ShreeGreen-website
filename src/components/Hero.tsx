@@ -36,7 +36,7 @@ const Hero = () => {
             </h1>
           </div>
           <p className="text-muted-foreground text-lg max-w-lg">
-            BlockCrete delivers premium Autoclaved Aerated Concrete solutions across UAE, Oman, and India, combining innovation, sustainability, and exceptional quality.
+            ShreeGreen delivers premium Autoclaved Aerated Concrete solutions across UAE, Oman, and India, combining innovation, sustainability, and exceptional quality.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button className="rounded-md h-12 px-6 text-white bg-primary hover:bg-primary/90">

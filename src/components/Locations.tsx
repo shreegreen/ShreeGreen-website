@@ -8,7 +8,7 @@ const Locations = () => {
       city: "Dubai",
       address: "Industrial Zone 3, Plot 45-C, Dubai",
       phone: "+971 4 123 4567",
-      email: "dubai@blockcrete.com",
+      email: "dubai@ShreeGreen.com",
       image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2000&auto=format&fit=crop",
     },
     {
@@ -16,7 +16,7 @@ const Locations = () => {
       city: "Muscat",
       address: "Rusayl Industrial Estate, Block B, Muscat",
       phone: "+968 2412 3456",
-      email: "oman@blockcrete.com",
+      email: "oman@ShreeGreen.com",
       image: "https://images.unsplash.com/photo-1621456707691-3cc4aca2c84f?q=80&w=2000&auto=format&fit=crop",
     },
     {
@@ -24,7 +24,7 @@ const Locations = () => {
       city: "Mumbai",
       address: "MIDC Industrial Area, Andheri East, Mumbai",
       phone: "+91 22 2345 6789",
-      email: "india@blockcrete.com",
+      email: "india@ShreeGreen.com",
       image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?q=80&w=2000&auto=format&fit=crop",
     },
   ];

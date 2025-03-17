@@ -104,7 +104,7 @@ const RequestQuote = () => {
                               <div>
                                 <p className="font-medium">Dubai Office</p>
                                 <p className="text-muted-foreground text-sm">
-                                  BlockCrete Building Materials LLC<br />
+                                  ShreeGreen Building Materials LLC<br />
                                   Industrial Area 2, Dubai, UAE
                                 </p>
                               </div>
@@ -124,7 +124,7 @@ const RequestQuote = () => {
                               <div>
                                 <p className="font-medium">Muscat Office</p>
                                 <p className="text-muted-foreground text-sm">
-                                  BlockCrete Oman LLC<br />
+                                  ShreeGreen Oman LLC<br />
                                   Industrial Estate, Muscat, Oman
                                 </p>
                               </div>
@@ -144,7 +144,7 @@ const RequestQuote = () => {
                               <div>
                                 <p className="font-medium">Mumbai Office</p>
                                 <p className="text-muted-foreground text-sm">
-                                  BlockCrete India Pvt Ltd<br />
+                                  ShreeGreen India Pvt Ltd<br />
                                   MIDC Industrial Area, Mumbai, India
                                 </p>
                               </div>
@@ -166,7 +166,7 @@ const RequestQuote = () => {
                         <Mail className="h-5 w-5 text-primary mt-0.5" />
                         <div>
                           <p className="font-medium">Email</p>
-                          <p className="text-muted-foreground text-sm">info@blockcrete.com</p>
+                          <p className="text-muted-foreground text-sm">info@ShreeGreen.com</p>
                         </div>
                       </CardContent>
                     </Card>

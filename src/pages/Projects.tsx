@@ -91,7 +91,7 @@ const Projects = () => {
             <AnimateOnScroll>
               <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Our Projects</h1>
               <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
-                Explore our portfolio of successful projects across UAE, Oman, and India where BlockCrete's premium AAC solutions have made a significant impact.
+                Explore our portfolio of successful projects across UAE, Oman, and India where ShreeGreen's premium AAC solutions have made a significant impact.
               </p>
             </AnimateOnScroll>
           </div>

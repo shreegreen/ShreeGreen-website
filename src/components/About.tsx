@@ -51,7 +51,7 @@ const About = () => {
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
           <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-4">
-            About BlockCrete
+            About ShreeGreen
           </span>
           <h2 className="section-title">
             Building Excellence Since 2007
@@ -71,7 +71,7 @@ const About = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-xl animate-on-scroll" style={{ transitionDelay: '400ms' }}>
                 <img 
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop" 
-                  alt="BlockCrete factory" 
+                  alt="ShreeGreen factory" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
@@ -93,7 +93,7 @@ const About = () => {
             <div className="animate-on-scroll" style={{ transitionDelay: '300ms' }}>
               <h3 className="text-2xl font-bold mb-4">Our Story</h3>
               <p className="text-muted-foreground mb-4">
-                Founded in 2007, BlockCrete has grown from a single manufacturing facility to become
+                Founded in 2007, ShreeGreen has grown from a single manufacturing facility to become
                 a leading provider of AAC building solutions across the Middle East and South Asia.
               </p>
               <p className="text-muted-foreground">

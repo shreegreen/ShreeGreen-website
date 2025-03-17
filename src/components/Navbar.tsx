@@ -60,11 +60,11 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="sr-only">BlockCrete</span>
+              <span className="sr-only">ShreeGreen</span>
               <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BC</span>
+                <span className="text-white font-bold text-lg">SG</span>
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">BlockCrete</span>
+              <span className="font-display font-bold text-xl tracking-tight">ShreeGreen</span>
             </Link>
           </div>
 

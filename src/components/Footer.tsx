@@ -12,9 +12,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">BC</span>
+                <span className="text-white font-bold text-lg">SG</span>
               </div>
-              <span className="font-display font-bold text-xl tracking-tight">BlockCrete</span>
+              <span className="font-display font-bold text-xl tracking-tight">ShreeGreen</span>
             </div>
             
             <p className="text-gray-400 mb-6">
@@ -76,7 +76,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-gray-400">info@blockcrete.com</span>
+                <span className="text-gray-400">info@ShreeGreen.com</span>
               </li>
             </ul>
           </div>
@@ -85,7 +85,7 @@ const Footer = () => {
         <div className="pt-8 mt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} BlockCrete. All rights reserved.
+              &copy; {currentYear} ShreeGreen. All rights reserved.
             </p>
             
             <div className="flex space-x-4 mt-4 sm:mt-0">
