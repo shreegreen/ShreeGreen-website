@@ -8,9 +8,6 @@ import Services from "@/components/Services";
 import Locations from "@/components/Locations";
 import Footer from "@/components/Footer";
 
-// Import framer-motion
-<lov-add-dependency>framer-motion@^11.0.0</lov-add-dependency>
-
 const Index = () => {
   useEffect(() => {
     const handleScroll = () => {
