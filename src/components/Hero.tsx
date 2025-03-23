@@ -69,10 +69,10 @@ const Hero = () => {
         >
           <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary/30 mix-blend-multiply z-10"></div>
-            {/* Primary image */}
+            {/* Updated image with a more professional construction image */}
             <img 
-              src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2000&auto=format&fit=crop"
-              alt="AAC blocks construction" 
+              src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
+              alt="Modern construction with sustainable materials" 
               className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             />
             
