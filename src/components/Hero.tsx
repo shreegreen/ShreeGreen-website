@@ -16,10 +16,10 @@ const Hero = () => {
       className="relative min-h-screen flex items-center pt-16 overflow-hidden"
     >
       {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-100 -z-10"></div>
       
       {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMjkyRjEiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdi02aC02djZoNnptNiAwaDZ2LTZoLTZ2NnptLTEyIDBoLTZ2LTZoLTZ2LTZoNnYtNmgtNnY2aC02djZoNnY2aC02djZoNnY2aDZ2LTZoNnYtNnptMTIgMGg2djZoLTZ2LTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50 -z-10"></div>
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNhMGI0MDAiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djZoNnYtNmgtNnptMCAwdi02aC02djZoNnptNiAwaDZ2LTZoLTZ2NnptLTEyIDBoLTZ2LTZoLTZ2LTZoNnYtNmgtNnY2aC02djZoNnY2aC02djZoNnY2aDZ2LTZoNnYtNnptMTIgMGg2djZoLTZ2LTZ6Ii8+PC9nPjwvZz48L3N2Zz4=')] opacity-50 -z-10"></div>
       
       <div className="section-container grid md:grid-cols-2 gap-8 md:gap-28 items-center">
         <div 
@@ -77,7 +77,7 @@ const Hero = () => {
             />
             
             {/* Floating card elements */}
-            <div className="absolute bottom-6 left-6 right-6 p-5 glass-card z-20 animate-slide-up">
+            <div className="absolute bottom-6 left-6 right-6 p-5 bg-gray-200/80 backdrop-blur-md shadow-md rounded-xl z-20 animate-slide-up">
               <h3 className="font-semibold text-lg mb-2">Eco-Friendly Materials</h3>
               <p className="text-sm text-gray-700">
                 Our AAC blocks reduce environmental impact with 30% less carbon footprint
@@ -85,7 +85,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <div className="absolute -top-4 -right-4 w-40 h-40 bg-white/80 backdrop-blur-sm shadow-lg rounded-xl p-4 z-10 animate-slide-right hidden md:block">
+          <div className="absolute -top-4 -right-4 w-40 h-40 bg-gray-200/90 backdrop-blur-sm shadow-lg rounded-xl p-4 z-10 animate-slide-right hidden md:block">
             <div className="h-full flex flex-col justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600">Energy Efficient</p>
@@ -93,7 +93,7 @@ const Hero = () => {
                 <p className="text-xs text-muted-foreground">Lower energy consumption</p>
               </div>
               
-              <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+              <div className="w-full h-1 bg-gray-300 rounded-full overflow-hidden">
                 <div className="h-full w-1/2 bg-primary rounded-full"></div>
               </div>
             </div>
