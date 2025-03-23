@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center pt-16 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-10 overflow-hidden" // Changed pt-16 to pt-10
     >
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-100 -z-10"></div>
@@ -27,7 +27,7 @@ const Hero = () => {
             isLoaded ? "opacity-100" : "opacity-0 translate-y-8"
           }`}
         >
-          <div>
+          <div className="mt-[-2rem]"> {/* Added negative margin to move content up */}
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight">
               Building a <span className="text-primary">Sustainable</span> Future with AAC Technology
