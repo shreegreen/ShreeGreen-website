@@ -1,9 +1,17 @@
 
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  
+  // Helper function to handle section links
+  const getSectionPath = (sectionId: string) => {
+    return isHomePage ? `#${sectionId}` : `/#${sectionId}`;
+  };
   
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -40,11 +48,21 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {["Home", "About Us", "Products", "Services", "Projects", "Contact Us"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase().replace(/ /g, '-')}`} className="text-gray-400 hover:text-white transition-colors hover:underline">
-                    {item}
-                  </a>
+              {[
+                { name: "Home", path: "/" },
+                { name: "About Us", path: "about" },
+                { name: "Products", path: "products" },
+                { name: "Services", path: "services" },
+                { name: "Projects", path: "/projects" },
+                { name: "Contact Us", path: "contact" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link 
+                    to={item.path.startsWith('/') ? item.path : getSectionPath(item.path)}
+                    className="text-gray-400 hover:text-white transition-colors hover:underline"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -53,11 +71,21 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-6">Products</h3>
             <ul className="space-y-3">
-              {["AAC Blocks", "AAC Panels", "Special Solutions", "Installation Guides", "Technical Specifications", "Downloads"].map((item) => (
+              {[
+                "AAC Blocks", 
+                "AAC Panels", 
+                "Special Solutions", 
+                "Installation Guides", 
+                "Technical Specifications", 
+                "Downloads"
+              ].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors hover:underline">
+                  <Link 
+                    to={getSectionPath("products")}
+                    className="text-gray-400 hover:text-white transition-colors hover:underline"
+                  >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
