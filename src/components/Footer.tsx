@@ -1,16 +1,27 @@
-
 import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
   
   // Helper function to handle section links
-  const getSectionPath = (sectionId: string) => {
-    return isHomePage ? `#${sectionId}` : `/#${sectionId}`;
+  const handleSectionLink = (e: React.MouseEvent, sectionId: string) => {
+    e.preventDefault();
+    
+    if (isHomePage) {
+      // If already on home page, just scroll to the section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home page with the section in the URL
+      navigate(`/#${sectionId}`);
+    }
   };
   
   return (
@@ -57,12 +68,22 @@ const Footer = () => {
                 { name: "Contact Us", path: "contact" }
               ].map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.path.startsWith('/') ? item.path : getSectionPath(item.path)}
-                    className="text-gray-400 hover:text-white transition-colors hover:underline"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.path.startsWith('/') ? (
+                    <Link 
+                      to={item.path}
+                      className="text-gray-400 hover:text-white transition-colors hover:underline"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <a 
+                      href={`#${item.path}`}
+                      className="text-gray-400 hover:text-white transition-colors hover:underline"
+                      onClick={(e) => handleSectionLink(e, item.path)}
+                    >
+                      {item.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -80,12 +101,13 @@ const Footer = () => {
                 "Downloads"
               ].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={getSectionPath("products")}
+                  <a 
+                    href="#products"
                     className="text-gray-400 hover:text-white transition-colors hover:underline"
+                    onClick={(e) => handleSectionLink(e, "products")}
                   >
                     {item}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
