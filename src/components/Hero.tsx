@@ -70,36 +70,15 @@ const Hero = () => {
             }`}
           >
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary/30 mix-blend-multiply z-10"></div>
+              <div className="absolute inset-0  z-10"></div>
               {/* Updated image with a more professional construction image */}
               <img 
-                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
+                src="/public/hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
-              
-              {/* Floating card elements */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 bg-gray-200/80 backdrop-blur-md shadow-md rounded-xl z-20 animate-slide-up">
-                <h3 className="font-semibold text-lg mb-2">Eco-Friendly Materials</h3>
-                <p className="text-sm text-gray-700">
-                  Our AAC blocks reduce environmental impact with 30% less carbon footprint
-                </p>
-              </div>
             </div>
-            
-            <div className="absolute -top-4 -right-4 w-40 h-40 bg-gray-200/90 backdrop-blur-sm shadow-lg rounded-xl p-4 z-10 animate-slide-right hidden md:block">
-              <div className="h-full flex flex-col justify-between">
-                <div>
-                  <p className="text-sm font-medium text-gray-600">Energy Efficient</p>
-                  <p className="text-2xl font-bold">50%</p>
-                  <p className="text-xs text-muted-foreground">Lower energy consumption</p>
-                </div>
-                
-                <div className="w-full h-1 bg-gray-300 rounded-full overflow-hidden">
-                  <div className="h-full w-1/2 bg-primary rounded-full"></div>
-                </div>
-              </div>
-            </div>
+
           </div>
         )}
         

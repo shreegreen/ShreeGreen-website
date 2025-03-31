@@ -59,14 +59,18 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="sr-only">ShreeGreen</span>
-              <div className="h-10 w-10 rounded-lg bg-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SG</span>
-              </div>
-              <span className="font-display font-bold text-xl tracking-tight">ShreeGreen</span>
-            </Link>
-          </div>
+          <Link to="/" className="flex items-center space-x-2">
+            <span className="sr-only">ShreeGreen</span>
+            <div className="h-10 w-10">
+              <img 
+                src="/public/logo.png" 
+                alt="ShreeGreen Logo" 
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <span className="font-display font-bold text-xl tracking-tight">ShreeGreen</span>
+          </Link>
+        </div>
 
           {/* Desktop Menu */}
           <DesktopMenu 

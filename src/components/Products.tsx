@@ -12,7 +12,8 @@ const Products = () => {
     {
       name: "AAC Blocks",
       description: "Lightweight, fire-resistant building blocks with superior thermal insulation",
-      image: "https://images.unsplash.com/photo-1561328399-f94d2ce78679?q=80&w=2000&auto=format&fit=crop",
+      image: "/public/aabb2.jpg", 
+
       features: [
         "Excellent thermal insulation",
         "Lightweight & easy to handle",
@@ -30,9 +31,9 @@ const Products = () => {
       }
     },
     {
-      name: "AAC Panels",
+      name: "Block Joining Mortar",
       description: "Reinforced autoclaved aerated concrete panels for floors, roofs and walls",
-      image: "https://images.unsplash.com/photo-1621829110288-31cd92661e74?q=80&w=2000&auto=format&fit=crop",
+      image: "/public/aabb.jpg", 
       features: [
         "Spans up to 6m without intermediate supports",
         "High load-bearing capacity",
@@ -47,26 +48,6 @@ const Products = () => {
         sizes: "Standard and custom sizes",
         fireRating: "A1 (non-combustible)",
         thermalConductivity: "0.17 W/mK"
-      }
-    },
-    {
-      name: "Special Solutions",
-      description: "Custom AAC products for specialized construction requirements",
-      image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=2000&auto=format&fit=crop",
-      features: [
-        "U-blocks for lintels and beams",
-        "Curved blocks for architectural designs",
-        "Insulated foundation blocks",
-        "Acoustic panels for sound studios",
-        "Cladding solutions",
-        "Custom shapes and sizes"
-      ],
-      specs: {
-        customization: "Fully customizable",
-        applications: "Specialized construction",
-        manufacturing: "Advanced CNC processing",
-        compatibility: "Works with standard AAC systems",
-        leadTime: "2-4 weeks depending on complexity"
       }
     }
   ];
