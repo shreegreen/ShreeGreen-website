@@ -17,7 +17,7 @@ const Products = () => {
       features: [
         "Excellent thermal insulation",
         "Lightweight & easy to handle",
-        "Fire resistant up to 4 hours",
+        "Fire resistant",
         "Sound absorption & acoustic insulation",
         "Precise dimensions for faster construction",
         "Environmentally friendly"

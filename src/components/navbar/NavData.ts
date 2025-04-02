@@ -12,11 +12,19 @@ export const navLinks: NavItem[] = [
     href: "#products",
     dropdown: [
       { name: "AAC Blocks", href: "#aac-blocks" },
-      { name: "AAC Panels", href: "#aac-panels" },
-      { name: "Special Solutions", href: "#special-solutions" }
+      { name: "Block Joining Mortar", href: "#aac-panels" }
+        ]
+  },
+
+  { name: "About",
+    href: "#about",
+    dropdown: [
+      { name: "Our Story", href: "#about" },
+      { name: "Our Team", href: "#ourteam" },
+      { name: "Our Clients", href: "#ourclients" },
+      { name: "Our Certification", href: "#ourcertifications" }
     ]
   },
-  { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "#contact" }

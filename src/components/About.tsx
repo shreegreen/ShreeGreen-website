@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Globe, Factory, Award, Users, ChevronLeft, ChevronRight } from "lucide-react";
+import { Globe, Factory, Award, Users, ChevronLeft, ChevronRight, Shield, CheckCircle } from "lucide-react";
 
 const About = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -34,12 +34,36 @@ const About = () => {
 
   // Client logos
   const clients = [
-    { name: "Client 1", logo: "/public/client1.jpg" },
-    { name: "Client 2", logo: "/public/client2.jpg" },
-    { name: "Client 3", logo: "/public/client3.jpg" },
-    { name: "Client 4", logo: "/public/client4.jpg" },
-    { name: "Client 5", logo: "/public/client5.jpg" },
-    { name: "Client 6", logo: "/public/client6.jpg" }
+    { name: "Client 1", logo: "/public/Miral.png" },
+    { name: "Client 2", logo: "/public/Airport.png" },
+    { name: "Client 3", logo: "/public/EcoFirst.png" },
+    { name: "Client 4", logo: "/public/Shirke.png" },
+    { name: "Client 5", logo: "/public/Vaastu.png" },
+    { name: "Client 6", logo: "/public/neel.jpg" }
+  ];
+
+  // Certifications
+  const certifications = [
+    { 
+      name: "ISO 9001:2015", 
+      logo: "/public/iso9001.png", 
+      description: "Quality Management System"
+    },
+    { 
+      name: "Green Building Certification", 
+      logo: "/public/green-certification.png", 
+      description: "Environmentally Sustainable Products"
+    },
+    { 
+      name: "CE Certification", 
+      logo: "/public/ce-certification.png", 
+      description: "European Conformity Standards"
+    },
+    { 
+      name: "BIS Certification", 
+      logo: "/public/bis-certification.png", 
+      description: "Bureau of Indian Standards"
+    }
   ];
 
   const nextSlide = () => {
@@ -115,7 +139,7 @@ const About = () => {
             
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="bg-gray-50 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '500ms' }}>
-                <p className="text-3xl font-bold text-primary">15+</p>
+                <p className="text-3xl font-bold text-primary">10+</p>
                 <p className="text-sm text-muted-foreground mt-1">Years of Excellence</p>
               </div>
               <div className="bg-gray-50 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '600ms' }}>
@@ -128,8 +152,9 @@ const About = () => {
           <div className="space-y-6">
             <div className="animate-on-scroll" style={{ transitionDelay: '300ms' }}>
               <h3 className="text-2xl font-bold mb-4">Our Story</h3>
+              
               <p className="text-muted-foreground mb-4">
-              Shreerang GreenConcept AAC Blocks Pvt. Ltd. is a leading manufacturer of high-quality, eco-friendly AAC blocks in Mhasa,
+              Shreerang GreenConcept AAC Blocks Pvt. Ltd. is a leading manufacturer of high-quality, eco-friendly AAC blocks in Murbad,
                Maharashtra. With advanced technology and a high-tech laboratory, we ensure superior strength, insulation, and sustainability.
               </p>
               <p className="text-muted-foreground">
@@ -159,6 +184,7 @@ const About = () => {
         </div>
         
         {/* Our Team Section */}
+        <section id="ourteam">
         <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '700ms' }}>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h3 className="text-2xl font-bold mb-4">Our Team</h3>
@@ -223,8 +249,10 @@ const About = () => {
             </div>
           </div>
         </div>
+        </section>
         
         {/* Our Clients Section */}
+        <section id="ourclients">
         <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '800ms' }}>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h3 className="text-2xl font-bold mb-4">Our Clients</h3>
@@ -249,6 +277,61 @@ const About = () => {
             ))}
           </div>
         </div>
+        </section>
+        
+        {/* Our Certifications Section */}
+        <section id ="ourcertifications">
+        <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '900ms' }}>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h3 className="text-2xl font-bold mb-4">Our Certifications</h3>
+            <p className="text-muted-foreground">
+              Committed to quality and excellence with industry-recognized certifications.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            {certifications.map((certification, index) => (
+              <div 
+                key={index}
+                className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow animate-on-scroll" 
+                style={{ transitionDelay: `${1000 + index * 100}ms` }}
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">{certification.name}</h4>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground mb-4">{certification.description}</p>
+                <div className="flex justify-center p-4 bg-gray-50 rounded-lg">
+                  <img 
+                    src={certification.logo} 
+                    alt={certification.name}
+                    className="h-16 object-contain"
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-10 bg-primary/5 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '1400ms' }}>
+            <div className="flex items-start space-x-4">
+              <div className="flex-shrink-0 h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                <CheckCircle className="h-5 w-5" />
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">Quality Commitment</h4>
+                <p className="text-sm text-muted-foreground">
+                  Our products undergo rigorous testing and quality checks to ensure they meet or exceed industry standards.
+                  Every AAC block we manufacture is backed by our commitment to durability, sustainability, and performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>
       </div>
     </section>
   );
