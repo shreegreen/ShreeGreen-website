@@ -47,7 +47,7 @@ const Hero = () => {
             </Button>
           </div>
           <div className="pt-6 sm:pt-8 grid grid-cols-3 gap-2 sm:gap-4">
-            {['15+', '1M+', '3'] .map((stat, i) => (
+            {['10+', '1M+', '3'] .map((stat, i) => (
               <div 
                 key={i} 
                 className={`transition-all duration-700 delay-${500 + (i*200)} ${

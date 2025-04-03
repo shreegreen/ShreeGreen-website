@@ -23,17 +23,16 @@ const Products = () => {
         "Environmentally friendly"
       ],
       specs: {
-        density: "550-650 kg/m³",
-        strength: "3.0-4.5 N/mm²",
+        density: "560-640 kg/m³",
+        strength: "≥ 3.5 N/mm2 for Grade - 2 & ≥ 4.0 N/mm2 for Grade-1",
         sizes: "Multiple sizes available",
-        fireRating: "A1 (non-combustible)",
-        thermalConductivity: "0.16 W/mK"
+        thermalConductivity: "0.16-0.21 W/mK"
       }
     },
     {
       name: "Block Joining Mortar",
       description: "Reinforced autoclaved aerated concrete panels for floors, roofs and walls",
-      image: "/public/aabb.jpg", 
+      image: "/public/as.jpg", 
       features: [
         "Spans up to 6m without intermediate supports",
         "High load-bearing capacity",
@@ -43,11 +42,8 @@ const Products = () => {
         "Suitable for all climatic conditions"
       ],
       specs: {
-        density: "600-700 kg/m³",
-        strength: "5.0-7.0 N/mm²",
-        sizes: "Standard and custom sizes",
-        fireRating: "A1 (non-combustible)",
-        thermalConductivity: "0.17 W/mK"
+        
+       
       }
     }
   ];

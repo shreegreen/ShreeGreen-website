@@ -28,9 +28,8 @@ const About = () => {
     { name: "", position: "", image: "/public/tm2.jpg" },
     { name: "", position: "", image: "/public/tm3.jpg" },
     { name: "", position: "", image: "/public/tm4.jpg" },
-    { name: "", position: "", image: "/public/tm.jpg" },
-    { name: "", position: "", image: "/public/team5.jpg" }
-  ];
+    { name: "", position: "", image: "/public/tm5.jpg" }
+    ];
 
   // Client logos
   const clients = [
@@ -42,27 +41,24 @@ const About = () => {
     { name: "Client 6", logo: "/public/neel.jpg" }
   ];
 
-  // Certifications
-  const certifications = [
-    { 
-      name: "ISO 9001:2015", 
-      logo: "/public/iso9001.png", 
-      description: "Quality Management System"
+  const managementTeam = [
+    {
+      name: "Mr. Pradeep Mhatre",
+      position: "Founder & Chairman",
+      bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
+      photo: "/public/ph.jpg"
     },
-    { 
-      name: "Green Building Certification", 
-      logo: "/public/green-certification.png", 
-      description: "Environmentally Sustainable Products"
+    {
+      name: "Mr. Sandip Mhatre",
+      position: "Director",
+      bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
+      photo: "/public/sm.jpg"  // Updated to use direct public path
     },
-    { 
-      name: "CE Certification", 
-      logo: "/public/ce-certification.png", 
-      description: "European Conformity Standards"
-    },
-    { 
-      name: "BIS Certification", 
-      logo: "/public/bis-certification.png", 
-      description: "Bureau of Indian Standards"
+    {
+      name: "Mr. Santosh Patil",
+      position: "Director",
+      bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
+      photo: "/public/sp.jpg"  // Updated to use direct public path
     }
   ];
 
@@ -74,7 +70,7 @@ const About = () => {
     setCurrentSlide((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
   };
 
-  // Auto-advance slides
+  // Auto-advance slides for team members
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
@@ -102,7 +98,7 @@ const About = () => {
     {
       icon: <Users className="h-6 w-6" />,
       title: "Expert Team",
-      description: "Over 500 professionals dedicated to excellence in AAC manufacturing"
+      description: "Over 200 professionals dedicated to excellence in AAC manufacturing"
     }
   ];
 
@@ -152,7 +148,7 @@ const About = () => {
           <div className="space-y-6">
             <div className="animate-on-scroll" style={{ transitionDelay: '300ms' }}>
               <h3 className="text-2xl font-bold mb-4">Our Story</h3>
-              
+              <b>
               <p className="text-muted-foreground mb-4">
               Shreerang GreenConcept AAC Blocks Pvt. Ltd. is a leading manufacturer of high-quality, eco-friendly AAC blocks in Murbad,
                Maharashtra. With advanced technology and a high-tech laboratory, we ensure superior strength, insulation, and sustainability.
@@ -161,6 +157,7 @@ const About = () => {
               Backed by experienced professionals, we deliver durable and cost-effective solutions tailored for modern construction needs.
                Our commitment to innovation, quality, and customer satisfaction makes us a trusted name in the industry.
               </p>
+              </b>
             </div>
             
             <div className="grid sm:grid-cols-2 gap-6 pt-6">
@@ -183,6 +180,44 @@ const About = () => {
           </div>
         </div>
         
+
+{/* Our Management Section */}
+<section id="ourmanagement">
+  <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '900ms' }}>
+    <div className="text-center max-w-3xl mx-auto mb-12">
+      <h3 className="text-2xl font-bold mb-4">Our Management</h3>
+      <p className="text-muted-foreground">
+        Meet our leadership team dedicated to excellence and innovation.
+      </p>
+    </div>
+    
+    <div className="grid md:grid-cols-3 gap-8 mt-12">
+      {managementTeam.map((member, index) => (
+        <div 
+          key={index}
+          className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow animate-on-scroll" 
+          style={{ transitionDelay: `${1000 + index * 100}ms` }}
+        >
+          <div className="flex justify-center mb-6">
+            <img 
+              src={member.photo} 
+              alt={member.name}
+              className="h-48 w-48 object-cover rounded-full"
+            />
+          </div>
+          <div className="text-center">
+            <h4 className="font-semibold text-lg">{member.name}</h4>
+            <p className="text-primary font-medium mb-3">{member.position}</p>
+          </div>
+          <p className="text-sm text-muted-foreground">{member.bio}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
         {/* Our Team Section */}
         <section id="ourteam">
         <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '700ms' }}>
@@ -251,87 +286,41 @@ const About = () => {
         </div>
         </section>
         
-        {/* Our Clients Section */}
+        {/* Our Clients Section - Truly Infinite Scrolling Carousel */}
         <section id="ourclients">
-        <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '800ms' }}>
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h3 className="text-2xl font-bold mb-4">Our Clients</h3>
-            <p className="text-muted-foreground">
-              Trusted by leading companies and organizations across multiple industries.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
-            {clients.map((client, index) => (
-              <div 
-                key={index}
-                className="bg-gray-50 rounded-xl p-4 flex items-center justify-center animate-on-scroll" 
-                style={{ transitionDelay: `${900 + index * 100}ms` }}
-              >
-                <img 
-                  src={client.logo} 
-                  alt={client.name}
-                  className="max-h-20 object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-        </section>
-        
-        {/* Our Certifications Section */}
-        <section id ="ourcertifications">
-        <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '900ms' }}>
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h3 className="text-2xl font-bold mb-4">Our Certifications</h3>
-            <p className="text-muted-foreground">
-              Committed to quality and excellence with industry-recognized certifications.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-            {certifications.map((certification, index) => (
-              <div 
-                key={index}
-                className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow animate-on-scroll" 
-                style={{ transitionDelay: `${1000 + index * 100}ms` }}
-              >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">{certification.name}</h4>
+          <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '800ms' }}>
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h3 className="text-2xl font-bold mb-4">Our Clients</h3>
+              <p className="text-muted-foreground">
+                Trusted by leading companies and organizations across multiple industries.
+              </p>
+            </div>
+            
+            <div className="relative w-full max-w-7xl mx-auto">
+              {/* Infinite scrolling carousel */}
+              <div className="overflow-hidden py-4">
+                <div className="infinite-carousel-container">
+                  <div className="infinite-carousel-inner">
+                    {/* Display each client logo twice to ensure seamless looping */}
+                    {[...clients, ...clients, ...clients].map((client, index) => (
+                      <div 
+                        key={index}
+                        className="infinite-carousel-item bg-gray-50 rounded-xl p-6 flex items-center justify-center h-28 shadow-sm" 
+                      >
+                        <img 
+                          src={client.logo} 
+                          alt={client.name}
+                          className="max-h-16 max-w-full object-contain"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4">{certification.description}</p>
-                <div className="flex justify-center p-4 bg-gray-50 rounded-lg">
-                  <img 
-                    src={certification.logo} 
-                    alt={certification.name}
-                    className="h-16 object-contain"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-10 bg-primary/5 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '1400ms' }}>
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
-                <CheckCircle className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Quality Commitment</h4>
-                <p className="text-sm text-muted-foreground">
-                  Our products undergo rigorous testing and quality checks to ensure they meet or exceed industry standards.
-                  Every AAC block we manufacture is backed by our commitment to durability, sustainability, and performance.
-                </p>
               </div>
             </div>
           </div>
-        </div>
         </section>
+        
       </div>
     </section>
   );

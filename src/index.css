@@ -82,3 +82,36 @@
     @apply text-muted-foreground text-lg mt-4 max-w-2xl;
   }
 }
+
+
+/* Infinite Carousel Styles */
+.infinite-carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.infinite-carousel-inner {
+  display: flex;
+  animation: infiniteScroll 30s linear infinite;
+  width: fit-content;
+}
+
+.infinite-carousel-item {
+  width: 260px;
+  flex-shrink: 0;
+  margin: 0 1rem;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-260px * 6 - 2rem * 6)); /* Width of one set of logos */
+  }
+}
+
+/* When the animation pauses on hover */
+.infinite-carousel-inner:hover {
+  animation-play-state: paused;
+}

@@ -40,7 +40,6 @@ const Index = () => {
       <About />
       <Products />
       <Services />
-      <Locations />
       <Footer />
     </div>
   );
