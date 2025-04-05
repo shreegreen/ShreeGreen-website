@@ -37,7 +37,7 @@ const Footer = () => {
             </div>
             
             <p className="text-gray-400 mb-6">
-              Leading manufacturer of premium AAC building solutions across UAE, Oman, and India.
+              Leading manufacturer of premium AAC building solutions across India.
             </p>
             
             <div className="flex space-x-4">
@@ -47,9 +47,15 @@ const Footer = () => {
               <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
+              <a 
+                  href="https://www.linkedin.com/company/shreergreen" 
+                  className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
                 <Linkedin className="h-5 w-5" />
               </a>
+
               <a href="#" className="h-10 w-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
@@ -64,7 +70,7 @@ const Footer = () => {
                 { name: "About Us", path: "about" },
                 { name: "Products", path: "products" },
                 { name: "Services", path: "services" },
-                { name: "Projects", path: "/projects" },
+                { name: "Carrer", path: "/projects" },
                 { name: "Contact Us", path: "contact" }
               ].map((item) => (
                 <li key={item.name}>
@@ -94,11 +100,9 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 "AAC Blocks", 
-                "AAC Panels", 
-                "Special Solutions", 
-                "Installation Guides", 
-                "Technical Specifications", 
-                "Downloads"
+                "Block Joining Mortar", 
+                "Special Solutions"
+
               ].map((item) => (
                 <li key={item}>
                   <a 
@@ -118,11 +122,11 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Headquarters: Industrial Zone 3, Plot 45-C, Dubai, UAE</span>
+                <span className="text-gray-400">Survey # 316/317, Village Mhasa, Tal, Murbad, Maharashtra 421401</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-gray-400">+971 4 123 4567</span>
+                <span className="text-gray-400">+91 9892034592</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />

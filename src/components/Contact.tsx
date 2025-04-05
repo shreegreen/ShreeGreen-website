@@ -13,7 +13,7 @@ const Contact = () => {
     country: "India",
     address: "Survey # 316/317, Village Mhasa, Tal, Murbad, Maharashtra 421401",
     phone: "+91 9892034592",
-    email: "shreegreen@example.com",
+    email: "info@shreegreen.com",
     whatsapp: "+91 9892034592",
     image: "/public/cc.jpg",
   };
