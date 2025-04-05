@@ -6,7 +6,7 @@ const Locations = () => {
     address: "Survey # 316/317, Village Mhasa, Tal, Murbad, Maharashtra 421401",
     phone: "+91 9892034592",
     email: "shreegreen",
-    image: "/public/cc.jpg", // This path will be used correctly now
+    image: "/cc.jpg", // This path will be used correctly now
   };
 
   return (

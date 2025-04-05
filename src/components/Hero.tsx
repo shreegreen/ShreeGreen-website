@@ -73,7 +73,7 @@ const Hero = () => {
               <div className="absolute inset-0  z-10"></div>
               {/* Updated image with a more professional construction image */}
               <img 
-                src="/public/hp.jpg" 
+                src="/hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />

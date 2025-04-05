@@ -63,7 +63,7 @@ const Navbar = () => {
             <span className="sr-only">ShreeGreen</span>
             <div className="h-10 w-10">
               <img 
-                src="/public/logo.png" 
+                src="/logo.png" 
                 alt="ShreeGreen Logo" 
                 className="h-full w-full object-contain"
               />

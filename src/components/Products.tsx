@@ -12,7 +12,7 @@ const Products = () => {
     {
       name: "AAC Blocks",
       description: "Lightweight, fire-resistant building blocks with superior thermal insulation",
-      image: "/public/aabb2.jpg", 
+      image: "/aabb2.jpg", 
 
       features: [
         "Excellent thermal insulation",
@@ -32,7 +32,7 @@ const Products = () => {
     {
       name: "Block Joining Mortar",
       description: "Reinforced autoclaved aerated concrete panels for floors, roofs and walls",
-      image: "/public/as.jpg", 
+      image: "/as.jpg", 
       features: [
         "Spans up to 6m without intermediate supports",
         "High load-bearing capacity",

@@ -25,20 +25,20 @@ const About = () => {
 
   // Team members slideshow
   const teamMembers = [
-    { name: "", position: "", image: "/public/tm2.jpg" },
-    { name: "", position: "", image: "/public/tm3.jpg" },
-    { name: "", position: "", image: "/public/tm4.jpg" },
-    { name: "", position: "", image: "/public/tm5.jpg" }
+    { name: "", position: "", image: "/tm2.jpg" },
+    { name: "", position: "", image: "/tm3.jpg" },
+    { name: "", position: "", image: "/tm4.jpg" },
+    { name: "", position: "", image: "/tm5.jpg" }
     ];
 
   // Client logos
   const clients = [
-    { name: "Client 1", logo: "/public/Miral.png" },
-    { name: "Client 2", logo: "/public/Airport.png" },
-    { name: "Client 3", logo: "/public/EcoFirst.png" },
-    { name: "Client 4", logo: "/public/Shirke.png" },
-    { name: "Client 5", logo: "/public/Vaastu.png" },
-    { name: "Client 6", logo: "/public/neel.jpg" }
+    { name: "Client 1", logo: "/Miral.png" },
+    { name: "Client 2", logo: "/Airport.png" },
+    { name: "Client 3", logo: "/EcoFirst.png" },
+    { name: "Client 4", logo: "/Shirke.png" },
+    { name: "Client 5", logo: "/Vaastu.png" },
+    { name: "Client 6", logo: "/neel.jpg" }
   ];
 
   const managementTeam = [
@@ -46,19 +46,19 @@ const About = () => {
       name: "Mr. Pradeep Mhatre",
       position: "Founder & Chairman",
       bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
-      photo: "/public/ph.jpg"
+      photo: "/ph.jpg"
     },
     {
       name: "Mr. Sandip Mhatre",
       position: "Director",
       bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
-      photo: "/public/sm.jpg"  // Updated to use direct public path
+      photo: "/sm.jpg"  // Updated to use direct public path
     },
     {
       name: "Mr. Santosh Patil",
       position: "Director",
       bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
-      photo: "/public/sp.jpg"  // Updated to use direct public path
+      photo: "/sp.jpg"  // Updated to use direct public path
     }
   ];
 
@@ -126,7 +126,7 @@ const About = () => {
               
               <div className="relative overflow-hidden rounded-2xl shadow-xl animate-on-scroll" style={{ transitionDelay: '400ms' }}>
                 <img 
-                src="/public/ab.jpg" 
+                src="/ab.jpg" 
                   alt="ShreeGreen factory" 
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />

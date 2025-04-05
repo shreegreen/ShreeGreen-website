@@ -15,7 +15,7 @@ const Contact = () => {
     phone: "+91 9892034592",
     email: "info@shreegreen.com",
     whatsapp: "+91 9892034592",
-    image: "/public/cc.jpg",
+    image: "/cc.jpg",
   };
 
   // Format address to properly display multiline content
