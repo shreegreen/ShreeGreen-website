@@ -143,7 +143,7 @@ const Hero = () => {
           >
             <div className="relative h-full overflow-hidden rounded-2xl shadow-2xl">
               <img 
-                src="public/hp.jpg" 
+                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover"
               />
