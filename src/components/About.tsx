@@ -25,20 +25,20 @@ const About = () => {
 
   // Team members slideshow
   const teamMembers = [
-    { name: "", position: "", image: "public/tm2.jpg" },
-    { name: "", position: "", image: "public/tm3.jpg" },
-    { name: "", position: "", image: "public/tm4.jpg" },
-    { name: "", position: "", image: "public/tm5.jpg" }
+    { name: "", position: "", image: "tm2.jpg" },
+    { name: "", position: "", image: "tm3.jpg" },
+    { name: "", position: "", image: "tm4.jpg" },
+    { name: "", position: "", image: "tm5.jpg" }
     ];
 
   // Client logos
   const clients = [
-    { name: "Client 1", logo: "public/Miral.png" },
-    { name: "Client 2", logo: "public/Airport.png" },
-    { name: "Client 3", logo: "public/EcoFirst.png" },
-    { name: "Client 4", logo: "public/Shirke.png" },
-    { name: "Client 5", logo: "public/Vaastu.png" },
-    { name: "Client 6", logo: "public/neel.jpg" }
+    { name: "Client 1", logo: "Miral.png" },
+    { name: "Client 2", logo: "Airport.png" },
+    { name: "Client 3", logo: "EcoFirst.png" },
+    { name: "Client 4", logo: "Shirke.png" },
+    { name: "Client 5", logo: "Vaastu.png" },
+    { name: "Client 6", logo: "neel.jpg" }
   ];
 
   const managementTeam = [
