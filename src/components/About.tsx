@@ -41,26 +41,26 @@ const About = () => {
     { name: "Client 6", logo: "neel.jpg" }
   ];
 
-  const managementTeam = [
-    {
-      name: "Mr. Pradeep Mhatre",
-      position: "Founder & Chairman",
-      bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
-      photo: "/ph.jpg"
-    },
-    {
-      name: "Mr. Sandip Mhatre",
-      position: "Director",
-      bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
-      photo: "/sm.jpg"  // Updated to use direct public path
-    },
-    {
-      name: "Mr. Santosh Patil",
-      position: "Director",
-      bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
-      photo: "/sp.jpg"  // Updated to use direct public path
-    }
-  ];
+  // const managementTeam = [
+  //   {
+  //     name: "Mr. Pradeep Mhatre",
+  //     position: "Founder & Chairman",
+  //     bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
+  //     photo: "/ph.jpg"
+  //   },
+  //   {
+  //     name: "Mr. Sandip Mhatre",
+  //     position: "Director",
+  //     bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
+  //     photo: "/sm.jpg"  // Updated to use direct public path
+  //   },
+  //   {
+  //     name: "Mr. Santosh Patil",
+  //     position: "Director",
+  //     bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
+  //     photo: "/sp.jpg"  // Updated to use direct public path
+  //   }
+  // ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
@@ -182,7 +182,7 @@ const About = () => {
         
 
 {/* Our Management Section */}
-<section id="ourmanagement">
+{/* <section id="ourmanagement">
   <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '900ms' }}>
     <div className="text-center max-w-3xl mx-auto mb-12">
       <h3 className="text-2xl font-bold mb-4">Our Management</h3>
@@ -214,7 +214,7 @@ const About = () => {
       ))}
     </div>
   </div>
-</section> */
+</section> */}
 
 
 
