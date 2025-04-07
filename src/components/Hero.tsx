@@ -91,7 +91,7 @@ const Hero = () => {
             <div className="relative h-full overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary/30 mix-blend-multiply z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
+                src="/hp.jpg"
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover"
               />
