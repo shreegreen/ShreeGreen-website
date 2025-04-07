@@ -17,9 +17,9 @@ const Contact = () => {
   const companyInfo = {
     country: "India",
     address: "Survey # 316/317, Village Mhasa, Tal, Murbad, Maharashtra 421401",
-    phone: "+91 9892034592",
+    phone: "+919421325914",
     email: "info@shreegreen.com",
-    whatsapp: "+91 9892034592",
+    whatsapp: "+919421325914",
     image: "/cc.jpg",
   };
 
@@ -67,19 +67,19 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      <section id="contact" className="pt-20 pb-16 bg-gradient-to-b from-white to-gray-50">
+      <section id="contact" className="pt-28 sm:pt-44 pb-4 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
           {/* Introduction Section */}
-          <div className="text-center max-w-4xl mx-auto mb-4">
+          <div className="text-center max-w-4xl mx-auto mb-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
                 Let's Build Something <span className="text-primary">Together</span>
               </h1>
-              <p className="text-base text-gray-600 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-2">
                 Whether you're planning a new construction project or need information about our AAC products, 
                 our team is ready to assist you. Reach out to us through any of the contact methods below 
                 or fill out the form to get started.
@@ -87,34 +87,34 @@ const Contact = () => {
             </motion.div>
           </div>
 
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-8 animate-on-scroll">
-            <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-3">
+          {/* Section Header - Reduced margins */}
+          <div className="text-center max-w-3xl mx-auto mb-4 animate-on-scroll">
+            <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-2">
               Contact Us
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2">
               Get In Touch
             </h2>
-            <p className="text-gray-600 mx-auto text-lg">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 mx-auto px-2">
               Have questions or need assistance? We're here to help. Reach out to our team using any of the contact methods below.
             </p>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-4"></div>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-1"></div>
           </div>
 
           {/* Contact Information Cards */}
-          <div className="mt-2">
+          <div className="mt-0">
             {isLoading ? (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {[...Array(4)].map((_, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-lg p-4 h-32 animate-pulse shadow-sm"
+                    className="bg-white rounded-lg p-2 sm:p-3 h-24 sm:h-28 animate-pulse shadow-sm"
                   ></div>
                 ))}
               </div>
             ) : (
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -169,28 +169,28 @@ const Contact = () => {
                         transition: { duration: 0.3 },
                       },
                     }}
-                    className="bg-white rounded-lg p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 border border-gray-100"
+                    className="bg-white rounded-lg p-3 sm:p-4 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 border border-gray-100"
                   >
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                      <item.icon className="w-6 h-6 text-primary" />
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary/10 rounded-full flex items-center justify-center mb-2">
+                      <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     </div>
-                    <h3 className="text-lg font-medium mb-3 text-gray-800">
+                    <h3 className="text-sm sm:text-base font-medium mb-1 text-gray-800">
                       {item.title}
                     </h3>
                     {item.links ? (
-                      <div className="space-y-1">
+                      <div className="space-y-0.5">
                         {item.links.map((link, idx) => (
                           <a
                             key={idx}
                             href={link.href}
-                            className="block text-sm text-gray-600 hover:text-primary transition-colors"
+                            className="block text-xs sm:text-sm text-gray-600 hover:text-primary transition-colors"
                           >
                             {link.text}
                           </a>
                         ))}
                       </div>
                     ) : (
-                      <address className="not-italic text-sm text-gray-600 mt-1">
+                      <address className="not-italic text-xs sm:text-sm text-gray-600">
                         {formatAddress(item.address)}
                       </address>
                     )}
@@ -312,7 +312,7 @@ const Contact = () => {
                     
                     {/* Map link */}
                     <a 
-                      href={`https://maps.google.com/?q=${encodeURIComponent(companyInfo.address)}`}
+                      href={`https://maps.app.goo.gl/JXW46JnCeGaHB2Yz6`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
@@ -336,7 +336,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3769.2655574291013!2d73.22845367587729!3d19.14142535206471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be795ed7bb42bb5%3A0xca9c3001e3c4c19!2sMurbad%2C%20Maharashtra%20421401!5e0!3m2!1sen!2sin!4v1712087255433!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205702.54972580035!2d73.17432548671876!3d19.16913929999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be78be60b4ffe05%3A0x6a7a841ce49cc443!2sSHREERANG%20GREEN%20CONCEPT%20AAC%20BLOCKS%20PVT%20LTD!5e1!3m2!1sen!2sin!4v1744054529697!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

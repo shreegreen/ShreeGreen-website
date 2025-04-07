@@ -90,7 +90,7 @@ const Projects = () => {
         <section className="bg-primary/5 py-20 mt-16">
           <div className="container mx-auto px-4">
             <AnimateOnScroll>
-              <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Our Career Portal</h1>
+              <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Our career Portal</h1>
               <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto">
                 Apply for job opportunities and join our team of talented professionals.
               </p>

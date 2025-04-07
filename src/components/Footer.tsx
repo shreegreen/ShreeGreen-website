@@ -70,7 +70,7 @@ const Footer = () => {
                 { name: "About Us", path: "about" },
                 { name: "Products", path: "products" },
                 { name: "Services", path: "services" },
-                { name: "Carrer", path: "/projects" },
+                { name: "Career", path: "/projects" },
                 { name: "Contact Us", path: "contact" }
               ].map((item) => (
                 <li key={item.name}>
@@ -100,8 +100,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 "AAC Blocks", 
-                "Block Joining Mortar", 
-                "Special Solutions"
+                "Block Joining Mortar" 
 
               ].map((item) => (
                 <li key={item}>
@@ -126,7 +125,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-gray-400">+91 9892034592</span>
+                <span className="text-gray-400">+919421325914</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />

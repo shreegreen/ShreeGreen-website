@@ -26,6 +26,6 @@ export const navLinks: NavItem[] = [
     ]
   },
   { name: "Services", href: "#services" },
-  { name: "Carrer", href: "/projects" },
+  { name: "Career", href: "/projects" },
   { name: "Contact", href: "/contact" }
 ];

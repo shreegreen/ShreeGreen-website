@@ -4,7 +4,7 @@ const Locations = () => {
   const location = {
     country: "India",
     address: "Survey # 316/317, Village Mhasa, Tal, Murbad, Maharashtra 421401",
-    phone: "+91 9892034592",
+    phone: "+919421325914",
     email: "shreegreen",
     image: "/cc.jpg", // This path will be used correctly now
   };
