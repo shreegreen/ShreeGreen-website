@@ -8,6 +8,11 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Company information
   const companyInfo = {
     country: "India",
@@ -62,26 +67,42 @@ const Contact = () => {
   return (
     <>
       <Navbar />
-      {/* Reduced padding at the top from py-16 to py-6 */}
-      <section id="contact" className="py-6 bg-gradient-to-b from-white to-gray-50">
+      <section id="contact" className="pt-20 pb-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 max-w-6xl">
-          
+          {/* Introduction Section */}
+          <div className="text-center max-w-4xl mx-auto mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3">
+                Let's Build Something <span className="text-primary">Together</span>
+              </h1>
+              <p className="text-base text-gray-600 max-w-2xl mx-auto">
+                Whether you're planning a new construction project or need information about our AAC products, 
+                our team is ready to assist you. Reach out to us through any of the contact methods below 
+                or fill out the form to get started.
+              </p>
+            </motion.div>
+          </div>
+
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 animate-on-scroll">
-            <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-4">
+          <div className="text-center max-w-3xl mx-auto mb-8 animate-on-scroll">
+            <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full inline-block mb-3">
               Contact Us
             </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
               Get In Touch
             </h2>
-            <p className="text-gray-600 mx-auto">
+            <p className="text-gray-600 mx-auto text-lg">
               Have questions or need assistance? We're here to help. Reach out to our team using any of the contact methods below.
             </p>
-            <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-6"></div>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mt-4"></div>
           </div>
 
           {/* Contact Information Cards */}
-          <div className="mb-12">
+          <div className="mt-2">
             {isLoading ? (
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {[...Array(4)].map((_, index) => (
@@ -93,7 +114,7 @@ const Contact = () => {
               </div>
             ) : (
               <motion.div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -148,12 +169,12 @@ const Contact = () => {
                         transition: { duration: 0.3 },
                       },
                     }}
-                    className="bg-white rounded-lg p-5 flex flex-col items-center text-center hover:shadow-md transition-all duration-200 border border-gray-100"
+                    className="bg-white rounded-lg p-6 flex flex-col items-center text-center hover:shadow-lg transition-all duration-300 border border-gray-100"
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-3">
-                      <item.icon className="w-5 h-5 text-primary" />
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                      <item.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h3 className="text-base font-medium mb-2 text-gray-800">
+                    <h3 className="text-lg font-medium mb-3 text-gray-800">
                       {item.title}
                     </h3>
                     {item.links ? (
@@ -181,7 +202,7 @@ const Contact = () => {
 
           {/* Contact Form + Location */}
           <motion.div
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
+            className="bg-white rounded-xl shadow-lg overflow-hidden mt-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -197,11 +218,11 @@ const Contact = () => {
                       Send Us a Message
                     </h3>
                     
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                       <div>
                         <label
                           htmlFor="name"
-                          className="block text-sm font-medium mb-1 text-gray-700"
+                          className="block text-sm font-medium mb-2 text-gray-700"
                         >
                           Full Name <span className="text-red-500">*</span>
                         </label>
@@ -209,7 +230,7 @@ const Contact = () => {
                           id="name"
                           name="name"
                           required
-                          className="w-full h-10 text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-3 py-2 transition-all"
+                          className="w-full h-11 text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-4 py-2 transition-all"
                           placeholder="John Doe"
                         />
                       </div>
@@ -217,7 +238,7 @@ const Contact = () => {
                       <div>
                         <label
                           htmlFor="email"
-                          className="block text-sm font-medium mb-1 text-gray-700"
+                          className="block text-sm font-medium mb-2 text-gray-700"
                         >
                           Email Address <span className="text-red-500">*</span>
                         </label>
@@ -226,7 +247,7 @@ const Contact = () => {
                           id="email"
                           name="email"
                           required
-                          className="w-full h-10 text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-3 py-2 transition-all"
+                          className="w-full h-11 text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-4 py-2 transition-all"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -234,7 +255,7 @@ const Contact = () => {
                       <div>
                         <label
                           htmlFor="message"
-                          className="block text-sm font-medium mb-1 text-gray-700"
+                          className="block text-sm font-medium mb-2 text-gray-700"
                         >
                           Your Message <span className="text-red-500">*</span>
                         </label>
@@ -243,7 +264,7 @@ const Contact = () => {
                           name="message"
                           rows={4}
                           required
-                          className="w-full text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-3 py-2 transition-all resize-y min-h-[100px]"
+                          className="w-full text-sm rounded-md border border-gray-200 focus:border-primary focus:ring focus:ring-primary/30 px-4 py-2 transition-all resize-y min-h-[120px]"
                           placeholder="How can we help you?"
                         />
                       </div>
@@ -327,11 +348,8 @@ const Contact = () => {
               />
             </motion.div>
           </div>
-        
         </div>
       </section>
-      {/* Added padding-top to create space between content and footer */}
-      <div className="pt-12"></div>
       <Footer />
     </>
   );

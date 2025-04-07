@@ -1,4 +1,3 @@
-
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -105,19 +104,21 @@ const Products = () => {
                 </ul>
               </div>
               
-              <div>
-                <h4 className="font-semibold mb-3">Technical Specifications</h4>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  {Object.entries(products[activeTab].specs).map(([key, value], index) => (
-                    <div key={index} className="flex py-2 border-b last:border-0 border-gray-100">
-                      <span className="text-sm font-medium w-1/3 text-gray-500 capitalize">
-                        {key.replace(/([A-Z])/g, ' $1').trim()}
-                      </span>
-                      <span className="text-sm flex-1">{value}</span>
-                    </div>
-                  ))}
+              {activeTab === 0 && (
+                <div>
+                  <h4 className="font-semibold mb-3">Technical Specifications</h4>
+                  <div className="bg-white rounded-lg p-4 shadow-sm">
+                    {Object.entries(products[activeTab].specs).map(([key, value], index) => (
+                      <div key={index} className="flex py-2 border-b last:border-0 border-gray-100">
+                        <span className="text-sm font-medium w-1/3 text-gray-500 capitalize">
+                          {key.replace(/([A-Z])/g, ' $1').trim()}
+                        </span>
+                        <span className="text-sm flex-1">{value}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
               
               <Button className="mt-4 bg-primary hover:bg-primary/90 text-white">
                 Request Product Information

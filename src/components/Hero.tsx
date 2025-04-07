@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -7,15 +6,67 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const Hero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const isMobile = useIsMobile();
+  
+  // Define our target stats values
+  const targetStats = [10, 1000000, 3];
+  const [displayStats, setDisplayStats] = useState([0, 0, 0]);
 
+  // Set isLoaded to true after component mount
   useEffect(() => {
-    setIsLoaded(true);
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
+
+  // Start animation when component is loaded
+  useEffect(() => {
+    if (isLoaded) {
+      // Animation configuration
+      const duration = 2000; // 2 seconds
+      const startTime = performance.now();
+      
+      const animateCounters = () => {
+        const currentTime = performance.now();
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Use easeOutCubic for smoother animation
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        
+        // Update counters
+        const newStats = targetStats.map(target => 
+          Math.round(target * easeOutCubic)
+        );
+        
+        setDisplayStats(newStats);
+        
+        // Continue animation until complete
+        if (progress < 1) {
+          requestAnimationFrame(animateCounters);
+        }
+      };
+      
+      // Start animation
+      requestAnimationFrame(animateCounters);
+    }
+  }, [isLoaded]);
+  
+  // Format stat values for display
+  const formatStat = (value, index) => {
+    if (index === 1) {
+      // Format the second stat (blocks produced)
+      if (value >= 1000000) return '2M+';
+      else if (value >= 1000) return `${Math.floor(value/1000)}K+`;
+      return `${value}+`;
+    }
+    return `${value}`;
+  };
 
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center pt-10 overflow-hidden"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center pt-16 sm:pt-20 overflow-hidden"
     >
       {/* Background with subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-100 -z-10"></div>
@@ -29,13 +80,13 @@ const Hero = () => {
             isLoaded ? "opacity-100" : "opacity-0 translate-y-8"
           }`}
         >
-          <div className="mt-[-1rem] sm:mt-[-2rem]">
+          <div className="mt-0 sm:mt-[-2rem]">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight leading-tight">
               Building a <span className="text-primary">Sustainable</span> Future with AAC Technology
             </h1>
           </div>
           <p className="text-base sm:text-lg max-w-lg text-muted-foreground">
-            ShreeGreen delivers premium Autoclaved Aerated Concrete solutions across UAE, Oman, and India, combining innovation, sustainability, and exceptional quality.
+            ShreeGreen delivers premium Autoclaved Aerated Concrete solutions across India, UAE, and Oman combining innovation, sustainability, and exceptional quality.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button className="rounded-md h-10 sm:h-12 px-4 sm:px-6 text-white bg-primary hover:bg-primary/90">
@@ -46,17 +97,21 @@ const Hero = () => {
               Contact Us
             </Button>
           </div>
+          
+          {/* Stats counter with animation */}
           <div className="pt-6 sm:pt-8 grid grid-cols-3 gap-2 sm:gap-4">
-            {['10+', '1M+', '3'] .map((stat, i) => (
+            {['Years Experience', 'Blocks Produced', 'Countries'].map((label, i) => (
               <div 
                 key={i} 
                 className={`transition-all duration-700 delay-${500 + (i*200)} ${
                   isLoaded ? "opacity-100" : "opacity-0 translate-y-4"
                 }`}
               >
-                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">{stat}</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+                  {formatStat(displayStats[i], i)}
+                </p>
                 <p className="text-xs sm:text-sm text-muted-foreground">
-                  {i === 0 ? 'Years Experience' : i === 1 ? 'Blocks Produced' : 'Countries'}
+                  {label}
                 </p>
               </div>
             ))}
@@ -70,15 +125,13 @@ const Hero = () => {
             }`}
           >
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
-              <div className="absolute inset-0  z-10"></div>
-              {/* Updated image with a more professional construction image */}
+              <div className="absolute inset-0 z-10"></div>
               <img 
-                src="/hp.jpg" 
+                src="public/hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
             </div>
-
           </div>
         )}
         
@@ -89,20 +142,11 @@ const Hero = () => {
             }`}
           >
             <div className="relative h-full overflow-hidden rounded-2xl shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary/30 mix-blend-multiply z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
+                src="public/hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover"
               />
-              
-              {/* Simplified floating card for mobile */}
-              <div className="absolute bottom-3 left-3 right-3 p-3 bg-gray-200/90 backdrop-blur-md shadow-md rounded-lg z-20 animate-slide-up">
-                <h3 className="font-semibold text-base">Eco-Friendly Materials</h3>
-                <p className="text-xs text-gray-700">
-                  30% less carbon footprint
-                </p>
-              </div>
             </div>
           </div>
         )}

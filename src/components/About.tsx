@@ -25,42 +25,42 @@ const About = () => {
 
   // Team members slideshow
   const teamMembers = [
-    { name: "", position: "", image: "/tm2.jpg" },
-    { name: "", position: "", image: "/tm3.jpg" },
-    { name: "", position: "", image: "/tm4.jpg" },
-    { name: "", position: "", image: "/tm5.jpg" }
+    { name: "", position: "", image: "public/tm2.jpg" },
+    { name: "", position: "", image: "public/tm3.jpg" },
+    { name: "", position: "", image: "public/tm4.jpg" },
+    { name: "", position: "", image: "public/tm5.jpg" }
     ];
 
   // Client logos
   const clients = [
-    { name: "Client 1", logo: "/Miral.png" },
-    { name: "Client 2", logo: "/Airport.png" },
-    { name: "Client 3", logo: "/EcoFirst.png" },
-    { name: "Client 4", logo: "/Shirke.png" },
-    { name: "Client 5", logo: "/Vaastu.png" },
-    { name: "Client 6", logo: "/neel.jpg" }
+    { name: "Client 1", logo: "public/Miral.png" },
+    { name: "Client 2", logo: "public/Airport.png" },
+    { name: "Client 3", logo: "public/EcoFirst.png" },
+    { name: "Client 4", logo: "public/Shirke.png" },
+    { name: "Client 5", logo: "public/Vaastu.png" },
+    { name: "Client 6", logo: "public/neel.jpg" }
   ];
 
-  const managementTeam = [
-    {
-      name: "Mr. Pradeep Mhatre",
-      position: "Founder & Chairman",
-      bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
-      photo: "/ph.jpg"
-    },
-    {
-      name: "Mr. Sandip Mhatre",
-      position: "Director",
-      bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
-      photo: "/sm.jpg"  // Updated to use direct public path
-    },
-    {
-      name: "Mr. Santosh Patil",
-      position: "Director",
-      bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
-      photo: "/sp.jpg"  // Updated to use direct public path
-    }
-  ];
+  // const managementTeam = [
+  //   {
+  //     name: "Mr. Pradeep Mhatre",
+  //     position: "Founder & Chairman",
+  //     bio: "With over 15 years of industry experience, Jane leads our company with strategic vision and operational excellence.",
+  //     photo: "public/ph.jpg"
+  //   },
+  //   {
+  //     name: "Mr. Sandip Mhatre",
+  //     position: "Director",
+  //     bio: "Michael ensures our day-to-day operations run smoothly while implementing innovative processes for continuous improvement.",
+  //     photo: "public/sm.jpg" // Updated to use direct public path
+  //   },
+  //   {
+  //     name: "Mr. Santosh Patil",
+  //     position: "Director",
+  //     bio: "Sarah drives our technological initiatives forward, keeping us at the cutting edge of industry developments.",
+  //     photo: "public/sp.jpg"  // Updated to use direct public path
+  //   }
+  // ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
@@ -83,7 +83,7 @@ const About = () => {
     {
       icon: <Globe className="h-6 w-6" />,
       title: "Global Presence",
-      description: "Operating across UAE, Oman, and India with state-of-the-art manufacturing facilities"
+      description: "Operating across India,  UAE and Oman"
     },
     {
       icon: <Factory className="h-6 w-6" />,
@@ -135,7 +135,7 @@ const About = () => {
             
             <div className="grid grid-cols-2 gap-4 mt-4">
               <div className="bg-gray-50 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '500ms' }}>
-                <p className="text-3xl font-bold text-primary">10+</p>
+                <p className="text-3xl font-bold text-primary">10</p>
                 <p className="text-sm text-muted-foreground mt-1">Years of Excellence</p>
               </div>
               <div className="bg-gray-50 rounded-xl p-6 animate-on-scroll" style={{ transitionDelay: '600ms' }}>
@@ -150,7 +150,7 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-4">Our Story</h3>
               <b>
               <p className="text-muted-foreground mb-4">
-              Shreerang GreenConcept AAC Blocks Pvt. Ltd. is a leading manufacturer of high-quality, eco-friendly AAC blocks in Murbad,
+              Shreerang GreenConcept AAC Blocks Pvt. Ltd. is a leading manufacturer of high-quality, eco-friendly AAC blocks in Murbad, Thane,
                Maharashtra. With advanced technology and a high-tech laboratory, we ensure superior strength, insulation, and sustainability.
               </p>
               <p className="text-muted-foreground">
@@ -181,7 +181,7 @@ const About = () => {
         </div>
         
 
-{/* Our Management Section */}
+{/* Our Management Section
 <section id="ourmanagement">
   <div className="mt-24 animate-on-scroll" style={{ transitionDelay: '900ms' }}>
     <div className="text-center max-w-3xl mx-auto mb-12">
@@ -214,7 +214,7 @@ const About = () => {
       ))}
     </div>
   </div>
-</section>
+</section> */}
 
 
 
@@ -231,7 +231,7 @@ const About = () => {
           <div className="relative mt-12 max-w-2xl mx-auto">
             {/* Slideshow container */}
             <div className="overflow-hidden rounded-2xl shadow-xl">
-              <div className="relative h-96">
+              <div className="relative h-64 sm:h-96">
                 {teamMembers.map((member, index) => (
                   <div 
                     key={index} 
@@ -242,11 +242,11 @@ const About = () => {
                     <img 
                       src={member.image} 
                       alt={member.name}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain sm:object-cover bg-gray-100"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 text-white">
-                      <h4 className="text-xl font-bold">{member.name}</h4>
-                      <p>{member.position}</p>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 sm:p-6 text-white">
+                      <h4 className="text-lg sm:text-xl font-bold">{member.name}</h4>
+                      <p className="text-sm sm:text-base">{member.position}</p>
                     </div>
                   </div>
                 ))}
@@ -256,14 +256,14 @@ const About = () => {
             {/* Navigation buttons */}
             <button 
               onClick={prevSlide}
-              className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-lg z-20"
+              className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-lg z-20 hidden sm:block"
               aria-label="Previous slide"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
             <button 
               onClick={nextSlide}
-              className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-lg z-20"
+              className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 hover:bg-white text-primary rounded-full p-2 shadow-lg z-20 hidden sm:block"
               aria-label="Next slide"
             >
               <ChevronRight className="h-6 w-6" />
