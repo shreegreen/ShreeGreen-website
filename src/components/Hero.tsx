@@ -127,7 +127,7 @@ const Hero = () => {
             <div className="relative aspect-square md:aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl">
               <div className="absolute inset-0 z-10"></div>
               <img 
-                src="public/hp.jpg" 
+                src="hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
@@ -143,7 +143,7 @@ const Hero = () => {
           >
             <div className="relative h-full overflow-hidden rounded-2xl shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2000&auto=format&fit=crop"
+                src="hp.jpg" 
                 alt="Modern construction with sustainable materials" 
                 className="w-full h-full object-cover"
               />
